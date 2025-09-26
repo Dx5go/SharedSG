@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Mon JSON</title>
+</head>
+<body>
+  <h1>Contenu du JSON</h1>
+  <pre id="json"></pre>
+
+  <script>
+    fetch("data.json")
+      .then(response => response.json())
+      .then(data => {
+        document.getElementById("json").textContent = JSON.stringify(data, null, 2);
+      })
+      .catch(error => console.error("Erreur:", error));
+  </script>
+</body>
+</html>
